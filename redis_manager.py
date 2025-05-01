@@ -1,10 +1,10 @@
 from redis.asyncio import Redis
-from config import REDIS_CHANNEL, REDIS_CLIENTS_KEY, REDIS_HOST
+from config import REDIS_CHANNEL, REDIS_CLIENTS_KEY, REDIS_HOST, REDIS_PORT
 
 
 class RedisManager:
     def __init__(self):
-        self.redis = Redis(host=REDIS_HOST, decode_responses=True)
+        self.redis = Redis(host=REDIS_HOST, port=REDIS_PORT decode_responses=True)
         self.clients_key = REDIS_CLIENTS_KEY
         self.channel = REDIS_CHANNEL
 
